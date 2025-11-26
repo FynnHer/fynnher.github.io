@@ -103,6 +103,7 @@ Edit the CSS variables in `assets/css/style.css`:
 - Replace placeholder images in `/assets/images/`
 - Modify project cards in `projects.html`
 - Add social links in the footer and contact page
+- **Important**: Replace `contact@example.com` in `contact.html` with your actual email address
 
 ## 📄 License
 
