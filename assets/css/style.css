@@ -932,8 +932,6 @@ strong {
    ============================================ */
 
 .reveal {
-    opacity: 1;
-    transform: translateY(0);
     transition: all 0.8s ease;
 }
 
@@ -943,8 +941,7 @@ strong {
     transform: translateY(30px);
 }
 
-.js-enabled .reveal.active,
-.reveal.active {
+.js-enabled .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
