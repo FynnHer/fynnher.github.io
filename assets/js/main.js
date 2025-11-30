@@ -2,6 +2,9 @@
    Main JavaScript - Navigation & Utilities
    ============================================ */
 
+// Add js-enabled class immediately to enable reveal animations
+document.documentElement.classList.add('js-enabled');
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initNavigation();

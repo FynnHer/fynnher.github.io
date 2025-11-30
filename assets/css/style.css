@@ -932,12 +932,16 @@ strong {
    ============================================ */
 
 .reveal {
-    opacity: 0;
-    transform: translateY(30px);
     transition: all 0.8s ease;
 }
 
-.reveal.active {
+/* Only hide elements when JavaScript is confirmed working */
+.js-enabled .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.js-enabled .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
