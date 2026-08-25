@@ -332,7 +332,10 @@ strong { font-weight: 700; }
 }
 
 /* ---------- Headline: word rotator ---------- */
-.rot { display: block; }
+.rot {
+    display: block;
+    max-width: 100%;
+}
 
 .js .rot__bar { width: 0; }
 

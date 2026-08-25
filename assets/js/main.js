@@ -88,21 +88,41 @@
         /* Headline word rotator */
         var rot = document.querySelector('[data-rot]');
         if (rot) {
-            var WORDS = ['kernels.', 'drone tools.', 'rescue maps.', 'things that boot.'];
+            var WORDS = ['kernels.', 'drone tools.', 'rescue maps.', 'schedulers.'];
             var mask = rot.querySelector('.rot__mask');
+            var sizer = rot.querySelector('.rot__sizer');
             var bar = rot.querySelector('.rot__bar');
             var current = mask.querySelector('.rot__word');
             var idx = 0;
+
+            /* The sizer holds the longest phrase, so it both keeps the mask one
+               line tall and gives us the width the widest word wants. */
+            var longest = WORDS.slice().sort(function (a, b) { return b.length - a.length; })[0];
+            sizer.textContent = longest;
 
             function fitBar(word) {
                 bar.style.width = Math.ceil(word.getBoundingClientRect().width) + 'px';
             }
 
-            requestAnimationFrame(function () { fitBar(current); });
-            window.addEventListener('resize', function () { fitBar(current); });
-            /* Webfonts land after first paint and change the measurement. */
+            /* Scale the whole rotator down if the longest phrase would overflow
+               the headline, so no word is ever clipped by the mask. Applied to
+               the container, so every word and the bar shrink by the same
+               factor and the words never differ in size from each other. */
+            function fit() {
+                rot.style.fontSize = '';
+                var available = rot.clientWidth;
+                var wanted = sizer.getBoundingClientRect().width;
+                if (wanted > available && available > 0) {
+                    rot.style.fontSize = (available / wanted).toFixed(4) + 'em';
+                }
+                fitBar(current);
+            }
+
+            requestAnimationFrame(fit);
+            window.addEventListener('resize', fit);
+            /* Webfonts land after first paint and change every measurement. */
             if (document.fonts && document.fonts.ready) {
-                document.fonts.ready.then(function () { fitBar(current); });
+                document.fonts.ready.then(fit);
             }
 
             var still = window.matchMedia('(prefers-reduced-motion: reduce)');
