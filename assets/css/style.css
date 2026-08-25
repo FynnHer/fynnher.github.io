@@ -344,28 +344,35 @@ strong { font-weight: 700; }
     to   { opacity: 1; transform: none; }
 }
 
-/* Words stack in one grid cell, so the block never reflows mid-swap
-   and the mask can clip the incoming and outgoing word. */
+/* The mask is held open by an invisible one-line sizer, and every word is
+   taken out of flow on top of it. That way the mask is exactly one line tall
+   no matter how many words exist mid-swap, so the bar underneath — and
+   everything below the headline — can never shift. */
 .rot__mask {
-    display: grid;
+    position: relative;
+    display: block;
     overflow: hidden;
-    padding-bottom: .06em;
+    padding-bottom: .16em;
+}
+.rot__sizer {
+    visibility: hidden;
 }
 .rot__word {
-    grid-area: 1 / 1;
+    position: absolute;
+    top: 0;
+    left: 0;
     color: var(--accent);
     white-space: nowrap;
-    justify-self: start;
 }
 .rot__word.is-out { animation: rotOut .52s cubic-bezier(.7, 0, .2, 1) both; }
 .rot__word.is-in  { animation: rotIn  .52s cubic-bezier(.7, 0, .2, 1) both; }
 
 @keyframes rotOut {
     from { transform: translateY(0);     opacity: 1; }
-    to   { transform: translateY(-108%); opacity: 0; }
+    to   { transform: translateY(-130%); opacity: 0; }
 }
 @keyframes rotIn {
-    from { transform: translateY(108%); opacity: 0; }
+    from { transform: translateY(130%); opacity: 0; }
     to   { transform: translateY(0);    opacity: 1; }
 }
 
