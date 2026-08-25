@@ -39,14 +39,21 @@
         var navBtn = document.querySelector('.nav__toggle');
         var navList = document.querySelector('.nav__links');
         if (navBtn && navList) {
-            navBtn.addEventListener('click', function () {
-                var open = navList.classList.toggle('is-open');
+            var setMenu = function (open) {
+                navList.classList.toggle('is-open', open);
                 navBtn.setAttribute('aria-expanded', String(open));
+                navBtn.textContent = open ? 'Close' : 'Menu';
+            };
+            navBtn.addEventListener('click', function () {
+                setMenu(!navList.classList.contains('is-open'));
             });
             navList.addEventListener('click', function (e) {
-                if (e.target.closest('a')) {
-                    navList.classList.remove('is-open');
-                    navBtn.setAttribute('aria-expanded', 'false');
+                if (e.target.closest('a')) setMenu(false);
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && navList.classList.contains('is-open')) {
+                    setMenu(false);
+                    navBtn.focus();
                 }
             });
         }

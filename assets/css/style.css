@@ -193,9 +193,22 @@ strong { font-weight: 700; }
 }
 .nav__logo:hover { background: var(--accent); color: var(--accent-ink); }
 
+.nav__right {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.nav__actions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
 .nav__links {
     display: flex;
     list-style: none;
+    margin: 0;
     padding: 0;
     gap: .35rem;
     align-items: center;
@@ -235,6 +248,14 @@ strong { font-weight: 700; }
 
 @media (max-width: 760px) {
     .nav__toggle { display: block; }
+
+    /* The list goes absolute below, leaving its <nav> wrapper zero-width —
+       drop the gap so it contributes no stray space beside the buttons. */
+    .nav__right { gap: 0; }
+
+    /* Full-bleed panel under the bar. Rows carry a top hairline and the first
+       row drops it, so nothing doubles against the bar above or the panel
+       border below. */
     .nav__links {
         display: none;
         position: absolute;
@@ -244,15 +265,28 @@ strong { font-weight: 700; }
         flex-direction: column;
         align-items: stretch;
         gap: 0;
+        padding: 0;
         background: var(--paper);
         border-bottom: var(--rule) solid var(--ink);
-        padding: .5rem 1.25rem 1rem;
     }
     .nav__links.is-open { display: flex; }
+
     .nav__link {
+        display: block;
         border: 0;
-        border-bottom: 2px solid var(--paper-3);
-        padding: .85rem .2rem;
+        border-top: 2px solid var(--paper-3);
+        padding: 1rem 1.25rem;
+    }
+    .nav__links > li:first-child .nav__link { border-top: 0; }
+    .nav__link:hover {
+        border-color: var(--paper-3);
+        background: var(--paper-2);
+    }
+    .nav__links > li:first-child .nav__link:hover { border-top: 0; }
+    .nav__link[aria-current="page"],
+    .nav__link[aria-current="page"]:hover {
+        background: var(--accent);
+        color: var(--accent-ink);
     }
 }
 
@@ -358,7 +392,11 @@ strong { font-weight: 700; }
     padding-bottom: .16em;
 }
 .rot__sizer {
+    /* Never let this wrap: it is the measuring stick the auto-fit reads, and
+       a wrapped sizer reports the container width instead of the word's own,
+       which silently defeats the scaling and doubles the mask height. */
     visibility: hidden;
+    white-space: nowrap;
 }
 .rot__word {
     position: absolute;

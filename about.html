@@ -24,17 +24,21 @@
 <header class="nav">
   <div class="nav__inner">
     <a class="nav__logo" href="index.html">FLH</a>
-    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
-    <nav aria-label="Primary">
-      <ul class="nav__links" id="nav-links">
-        <li><a class="nav__link" href="index.html">Index</a></li>
-        <li><a class="nav__link" href="projects.html">Work</a></li>
-        <li><a class="nav__link" href="about.html" aria-current="page">About</a></li>
-        <li><a class="nav__link" href="blog/index.html">Notes</a></li>
-        <li><a class="nav__link" href="contact.html">Contact</a></li>
-        <li><button class="theme" data-theme-toggle type="button">Dark</button></li>
-      </ul>
-    </nav>
+    <div class="nav__right">
+      <nav aria-label="Primary">
+        <ul class="nav__links" id="nav-links">
+          <li><a class="nav__link" href="index.html">Index</a></li>
+          <li><a class="nav__link" href="projects.html">Work</a></li>
+          <li><a class="nav__link" href="about.html" aria-current="page">About</a></li>
+          <li><a class="nav__link" href="blog/index.html">Notes</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme" data-theme-toggle type="button">Dark</button>
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      </div>
+    </div>
   </div>
 </header>
 <main id="main">
