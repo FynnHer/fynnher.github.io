@@ -85,6 +85,50 @@
             });
         }
 
+        /* Headline word rotator */
+        var rot = document.querySelector('[data-rot]');
+        if (rot) {
+            var WORDS = ['kernels.', 'drone tools.', 'rescue maps.', 'things that boot.'];
+            var mask = rot.querySelector('.rot__mask');
+            var bar = rot.querySelector('.rot__bar');
+            var current = mask.querySelector('.rot__word');
+            var idx = 0;
+
+            function fitBar(word) {
+                bar.style.width = Math.ceil(word.getBoundingClientRect().width) + 'px';
+            }
+
+            requestAnimationFrame(function () { fitBar(current); });
+            window.addEventListener('resize', function () { fitBar(current); });
+            /* Webfonts land after first paint and change the measurement. */
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(function () { fitBar(current); });
+            }
+
+            var still = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (!still.matches) {
+                setInterval(function () {
+                    if (document.hidden) return;
+                    idx = (idx + 1) % WORDS.length;
+
+                    var next = document.createElement('span');
+                    next.className = 'rot__word is-in';
+                    next.textContent = WORDS[idx];
+                    mask.appendChild(next);
+                    fitBar(next);
+
+                    var previous = current;
+                    previous.classList.remove('is-in');
+                    previous.classList.add('is-out');
+                    setTimeout(function () {
+                        if (previous.parentNode) previous.parentNode.removeChild(previous);
+                    }, 560);
+
+                    current = next;
+                }, 2200);
+            }
+        }
+
         /* Duplicate ticker content so the marquee loops seamlessly */
         var track = document.querySelector('.ticker__track');
         if (track) track.innerHTML += track.innerHTML;
