@@ -1,4 +1,4 @@
-/* fynnher.github.io — small, dependency-free */
+/* fynn-lasse.de — small, dependency-free */
 (function () {
     'use strict';
 

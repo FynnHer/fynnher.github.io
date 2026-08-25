@@ -1,6 +1,6 @@
-# fynnher.github.io
+# fynn-lasse.de
 
-My personal site — [fynnher.github.io](https://fynnher.github.io).
+My personal site — [fynn-lasse.de](https://fynn-lasse.de).
 
 Static HTML, one hand-written stylesheet, and about 100 lines of vanilla JavaScript.
 No build step, no framework, no dependencies. GitHub Pages serves the repository root as-is.
