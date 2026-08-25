@@ -1,132 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Fynn-Lasse Herrmann</title>
-    <meta name="description" content="Blog posts by Fynn-Lasse Herrmann - Thoughts on programming, AI, and technology">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes — Fynn-Lasse Herrmann</title>
+<meta name="description" content="Writing on kernel development, mapping and tooling by Fynn-Lasse Herrmann. Nothing published yet.">
+<meta name="author" content="Fynn-Lasse Herrmann">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Notes — Fynn-Lasse Herrmann">
+<meta property="og:description" content="Writing on kernel development, mapping and tooling by Fynn-Lasse Herrmann. Nothing published yet.">
+<meta property="og:url" content="https://fynnher.github.io/blog/index.html">
+<link rel="canonical" href="https://fynnher.github.io/blog/index.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d93f14'/><text y='72' x='50' text-anchor='middle' font-family='Arial Black,sans-serif' font-size='58' fill='%23fff8f2'>F</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/main.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <span class="logo-text">FH</span>
-            </a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="../projects.html" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="index.html" class="nav-link active">Blog</a></li>
-                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="../index.html">FLH</a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="nav-links">
+        <li><a class="nav__link" href="../index.html">Index</a></li>
+        <li><a class="nav__link" href="../projects.html">Work</a></li>
+        <li><a class="nav__link" href="../about.html">About</a></li>
+        <li><a class="nav__link" href="../blog/index.html" aria-current="page">Notes</a></li>
+        <li><a class="nav__link" href="../contact.html">Contact</a></li>
+        <li><button class="theme" data-theme-toggle type="button">Dark</button></li>
+      </ul>
     </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__meta">
+      <span class="mono">Notes</span>
+      <span class="mono">0 published</span>
+    </div>
+    <h1 class="hero__title"><span class="is-accent">Notes</span></h1>
+    <p class="lede" style="margin-top:2rem">Somewhere to write down the things that took me three days to work out, so that the next person spends an afternoon on them instead.</p>
+  </div>
+</section>
 
-    <!-- Blog Hero -->
-    <section class="blog-hero">
-        <div class="container">
-            <h1 class="text-gradient reveal">Blog</h1>
-            <p class="reveal">Thoughts, tutorials, and insights from my coding journey.</p>
-        </div>
-    </section>
+<section class="bay">
+  <div class="wrap">
+    <div class="empty reveal">
+      <h2>Nothing published yet</h2>
+      <p>I would rather have an empty page than a filled one. When there is something worth writing up — exception vectors, virtio queues, why isochrones lie — it will appear here.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn--loud" href="../projects.html">Read the code instead</a>
+      </div>
+    </div>
 
-    <!-- Blog Posts List -->
-    <section class="section">
-        <div class="container">
-            <div class="blog-list" id="blog-list">
-                <!-- Blog Post 1: Welcome -->
-                <article class="blog-list-item reveal">
-                    <div class="blog-list-date">
-                        <span class="blog-list-day">26</span>
-                        <span class="blog-list-month">Nov 2024</span>
-                    </div>
-                    <div class="blog-list-content">
-                        <h3><a href="posts/welcome.html">Welcome to My Blog</a></h3>
-                        <p>First post on my new personal blog. Excited to share my coding journey and experiences with you all!</p>
-                        <a href="posts/welcome.html" class="blog-link">Read More →</a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 2: Python AI -->
-                <article class="blog-list-item reveal">
-                    <div class="blog-list-date">
-                        <span class="blog-list-day">20</span>
-                        <span class="blog-list-month">Nov 2024</span>
-                    </div>
-                    <div class="blog-list-content">
-                        <h3><a href="posts/getting-started-with-python-ai.html">Getting Started with Python and AI</a></h3>
-                        <p>An introduction to artificial intelligence with Python. Exploring the basics of machine learning and image analysis.</p>
-                        <a href="posts/getting-started-with-python-ai.html" class="blog-link">Read More →</a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 3: Why I'm Learning Rust -->
-                <article class="blog-list-item reveal">
-                    <div class="blog-list-date">
-                        <span class="blog-list-day">15</span>
-                        <span class="blog-list-month">Nov 2024</span>
-                    </div>
-                    <div class="blog-list-content">
-                        <h3><a href="posts/why-im-learning-rust.html">Why I'm Learning Rust</a></h3>
-                        <p>My journey into systems programming with Rust. Why I chose this language and what I hope to build with it.</p>
-                        <a href="posts/why-im-learning-rust.html" class="blog-link">Read More →</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Subscribe CTA -->
-    <section class="section contact-cta">
-        <div class="container">
-            <div class="cta-content reveal">
-                <h2 class="cta-title">Stay Updated</h2>
-                <p class="cta-text">Follow my GitHub for the latest projects and updates!</p>
-                <a href="https://github.com/FynnHer" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Follow on GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-text">FH</span>
-                </div>
-                <nav class="footer-nav">
-                    <a href="../index.html">Home</a>
-                    <a href="../about.html">About</a>
-                    <a href="../projects.html">Projects</a>
-                    <a href="index.html">Blog</a>
-                    <a href="../contact.html">Contact</a>
-                </nav>
-                <div class="footer-social">
-                    <a href="https://github.com/FynnHer" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Fynn-Lasse Herrmann. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../scripts/scrollmagic.js"></script>
+    <div class="head reveal mt-lg">
+      <h2>On the list</h2>
+      <span class="mono">Drafts in my head</span>
+    </div>
+    <ul class="stack reveal">
+      <li><b>Booting AArch64</b><span>From the reset vector to a C entry point, and every wrong assumption in between.</span></li>
+      <li><b>Page tables by hand</b><span>What the AArch64 translation tables actually want from you, written for whoever I was six months ago.</span></li>
+      <li><b>Two kernels</b><span>The same subsystems in C and in Rust, and which of my habits didn’t survive the port.</span></li>
+      <li><b>Isochrones and honesty</b><span>Why a travel-time polygon is a guess, and how to draw one without overpromising to a search team.</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <p class="mono">Fynn-Lasse Herrmann</p>
+        <p style="max-width:32ch">Kernels, drones and the maps in between. Built by hand, hosted on GitHub&nbsp;Pages.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Footer">
+          <a href="../index.html">Index</a>
+          <a href="../projects.html">Work</a>
+          <a href="../about.html">About</a>
+          <a href="../blog/index.html">Notes</a>
+          <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="foot__social">
+        <a href="https://github.com/FynnHer" rel="me noopener" target="_blank" aria-label="GitHub profile"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.7.8.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <p class="mono">&copy; <span data-year>2026</span> Fynn-Lasse Herrmann</p>
+      <p class="mono">The Palatinate, Germany</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

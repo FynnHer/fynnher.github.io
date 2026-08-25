@@ -1,232 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Fynn-Lasse Herrmann</title>
-    <meta name="description" content="Learn more about Fynn-Lasse Herrmann - Software Developer, AI Enthusiast, and DLRG Member">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Fynn-Lasse Herrmann</title>
+<meta name="description" content="19, the Palatinate, Germany. B.Sc. Computer Science at DHBW Karlsruhe with SAP SE, kernel hobbyist, and drone operator and developer for the DLRG in civil protection.">
+<meta name="author" content="Fynn-Lasse Herrmann">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About — Fynn-Lasse Herrmann">
+<meta property="og:description" content="19, the Palatinate, Germany. B.Sc. Computer Science at DHBW Karlsruhe with SAP SE, kernel hobbyist, and drone operator and developer for the DLRG in civil protection.">
+<meta property="og:url" content="https://fynnher.github.io/about.html">
+<link rel="canonical" href="https://fynnher.github.io/about.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d93f14'/><text y='72' x='50' text-anchor='middle' font-family='Arial Black,sans-serif' font-size='58' fill='%23fff8f2'>F</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-text">FH</span>
-            </a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
-                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="blog/index.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="index.html">FLH</a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="nav-links">
+        <li><a class="nav__link" href="index.html">Index</a></li>
+        <li><a class="nav__link" href="projects.html">Work</a></li>
+        <li><a class="nav__link" href="about.html" aria-current="page">About</a></li>
+        <li><a class="nav__link" href="blog/index.html">Notes</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+        <li><button class="theme" data-theme-toggle type="button">Dark</button></li>
+      </ul>
     </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__meta">
+      <span class="mono">About</span>
+      <span class="mono">Born 2007 &middot; Germany</span>
+    </div>
+    <h1 class="hero__title"><span>Hello,</span><span>I&rsquo;m <span class="is-accent">Fynn</span></span></h1>
+    <div class="hero__grid">
+      <div>
+        <p class="lede">I&rsquo;m 19, I live in the Palatinate, and I have been writing code since school in a fairly undirected way that eventually pointed itself at operating systems.</p>
+        <p style="margin-top:1.25rem;color:var(--ink-soft);max-width:56ch">I&rsquo;m reading for a B.Sc. in Computer Science at <strong>DHBW Karlsruhe</strong> on the dual model, alternating between lectures and working at my partner company, <strong>SAP SE</strong> in Walldorf. Outside that I fly drones for the DLRG and build the software around them.</p>
+      </div>
+      <aside class="hero__side">
+        <dl>
+          <dt>Age</dt><dd>19</dd>
+          <dt>Based</dt><dd>The Palatinate, Germany</dd>
+          <dt>Degree</dt><dd>B.Sc. Computer Science (dual)</dd>
+          <dt>University</dt><dd>DHBW Karlsruhe</dd>
+          <dt>Partner</dt><dd>SAP SE, Walldorf</dd>
+          <dt>Languages</dt><dd>German (native), English</dd>
+          <dt>Code</dt><dd>C, Rust, Python, Dart, JavaScript</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
 
-    <!-- About Hero -->
-    <section class="about-hero">
-        <div class="container">
-            <div class="about-intro">
-                <div class="about-image reveal">
-                    <div class="about-avatar">FH</div>
-                </div>
-                <div class="about-text reveal">
-                    <h1 class="text-gradient">About Me</h1>
-                    <p>Hi! I'm <strong>Fynn-Lasse Herrmann</strong>, an 18-year-old developer and student from Rhineland-Palatinate, Germany. I'm passionate about creating innovative software solutions and exploring the cutting edge of technology.</p>
-                    <p>Currently preparing for a <strong>dual computer science degree</strong>, I spend my time diving deep into AI, mobile development, and systems programming. When I'm not coding, you'll find me active in the DLRG (German Life Saving Association).</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="bay">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2>The longer version</h2>
+      <span class="mono">Why kernels, of all things</span>
+    </div>
+    <div class="slab reveal">
+      <p class="slab__label">Curiosity</p>
+      <div class="slab__body">
+        <p>Most programming hands you a machine that already works. I kept running into the edges of that &mdash; why a program is slow, why a driver exists, what the operating system is actually doing while my code waits &mdash; and the only way I found to answer those questions was to remove the operating system and see what breaks.</p>
+        <p>What breaks is everything. There is no <code>printf</code> until you write to a UART yourself, no memory until you build page tables, no multitasking until you save and restore registers by hand. Craybond took months to reach a point where it could draw a rectangle on a screen, and that rectangle remains the most satisfying thing I have shipped.</p>
+      </div>
+    </div>
+    <div class="slab reveal">
+      <p class="slab__label">Method</p>
+      <div class="slab__body">
+        <p>I write the same idea twice on purpose. Craybond is C, close to the metal and entirely my responsibility; CapeOS is Rust, where the compiler argues back. Doing both is how I tell which of my habits are real understanding and which were just C letting me get away with it.</p>
+      </div>
+    </div>
+    <div class="slab reveal">
+      <p class="slab__label">Counterweight</p>
+      <div class="slab__body">
+        <p>Systems work is solitary and abstract, so it helps that half of what I build has a person waiting for it. When a DLRG unit needs to know how far a missing person could have walked in forty minutes, or what the drone actually saw over that field, the answer has to be on a map, in a browser, today. That deadline is a good corrective to spending a week on an interrupt handler nobody asked for.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Skills Section -->
-    <section class="section skills-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">My Skills</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="skills-grid">
-                <!-- Python & AI -->
-                <div class="skill-card reveal">
-                    <div class="skill-icon">🐍</div>
-                    <h3 class="skill-title">Python & AI</h3>
-                    <p class="skill-description">Strong experience in Python development with a focus on artificial intelligence and image analysis. Building tools that leverage machine learning for practical applications.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">AI</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Image Analysis</span>
-                    </div>
-                </div>
+<section class="bay bay--tint">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2>Stack</h2>
+      <span class="mono">What I reach for, and why</span>
+    </div>
+    <ul class="stack reveal">
+      <li><b>C</b><span>Kernel work. Craybond&rsquo;s memory management, GIC interrupt handling, PCI enumeration, Device Tree parsing and scheduler are all written here, plus the AArch64 assembly underneath.</span></li>
+      <li><b>Rust</b><span>CapeOS, and the escape room server TUI. I use it where I want the guarantees without giving up the low level.</span></li>
+      <li><b>Python</b><span>Where I think fastest. Tooling, glue, GUI clients with Tkinter, and teaching material.</span></li>
+      <li><b>JavaScript</b><span>Browser mapping. Leaflet for 2D layers and GeoJSON, Three.js for the 3D meshes and measurement tools.</span></li>
+      <li><b>Dart &amp; Flutter</b><span>The DLRG club app. Cross-platform because a volunteer organisation cannot pick a phone for its members.</span></li>
+      <li><b>Drone side</b><span>OpenDroneMap for photogrammetry, OpenRouteService for isochrones, GeoJSON and KML for everything that has to leave my tools and land in somebody else&rsquo;s.</span></li>
+      <li><b>The rest</b><span>QEMU and GDB more hours than any of the above, plus Make and Git.</span></li>
+    </ul>
+  </div>
+</section>
 
-                <!-- Flutter -->
-                <div class="skill-card reveal">
-                    <div class="skill-icon">📱</div>
-                    <h3 class="skill-title">Flutter Development</h3>
-                    <p class="skill-description">Developing cross-platform mobile applications with Flutter and Dart. Currently have an app in beta testing, showcasing my passion for mobile user experiences.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Flutter</span>
-                        <span class="tag">Dart</span>
-                        <span class="tag">Mobile</span>
-                        <span class="tag">Cross-Platform</span>
-                    </div>
-                </div>
+<section class="bay">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2>Timeline</h2>
+      <span class="mono">Roughly how I got here</span>
+    </div>
+    <ol class="line reveal">
+      <li>
+        <time datetime="2026">2026 &mdash; now</time>
+        <h3>B.Sc. Computer Science, DHBW Karlsruhe</h3>
+        <p>The dual model: alternating between lectures at DHBW Karlsruhe and practice phases at SAP SE in Walldorf. Exactly the arrangement I wanted &mdash; theory that has to survive contact with a real codebase.</p>
+      </li>
+      <li>
+        <time datetime="2026">2026</time>
+        <h3>Craybond OS reaches a running system</h3>
+        <p>Boot, MMU, interrupts, PCI, processes, syscalls and a virtio-gpu framebuffer, on QEMU&rsquo;s AArch64 virt machine.</p>
+      </li>
+      <li>
+        <time datetime="2026">2026</time>
+        <h3>Travel Radius Map for DLRG operations</h3>
+        <p>Isochrone-based search planning with an OpenRouteService backend, KML export and saved map state.</p>
+      </li>
+      <li>
+        <time datetime="2025">2025</time>
+        <h3>CapeOS, and Rust in earnest</h3>
+        <p>Started the Rust kernel, and shipped the escape room server TUI as a smaller Rust project with real users at a desk.</p>
+      </li>
+      <li>
+        <time datetime="2025">2025</time>
+        <h3>Mapping and 3D viewer</h3>
+        <p>Built the Leaflet and Three.js viewer to make drone photogrammetry output readable in a browser.</p>
+      </li>
+      <li>
+        <time datetime="2025">2025</time>
+        <h3>Flutter for the DLRG club app</h3>
+        <p>First serious cross-platform app work, with a non-technical audience and no room for a bad first run.</p>
+      </li>
+      <li>
+        <time datetime="2024">2023 &mdash; 2024</time>
+        <h3>School projects, in public</h3>
+        <p>The battleship client, the OOP talk, calculators and experiments. The point at which I started putting things on GitHub instead of in a folder.</p>
+      </li>
+    </ol>
+  </div>
+</section>
 
-                <!-- Rust -->
-                <div class="skill-card reveal">
-                    <div class="skill-icon">🦀</div>
-                    <h3 class="skill-title">Rust & Systems</h3>
-                    <p class="skill-description">Currently learning Rust with a focus on kernel and low-level programming. Exploring memory-safe systems programming and understanding how computers work at the deepest level.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Rust</span>
-                        <span class="tag">Systems</span>
-                        <span class="tag">Kernel</span>
-                        <span class="tag">Low-Level</span>
-                    </div>
-                </div>
+<section class="bay bay--tint">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2>DLRG</h2>
+      <span class="mono">Deutsche Lebens-Rettungs-Gesellschaft</span>
+    </div>
+    <div class="slab reveal">
+      <p class="slab__label">Volunteer</p>
+      <div class="slab__body">
+        <p>The DLRG is the world&rsquo;s largest voluntary water rescue organisation, and in Germany it is part of the civil protection system &mdash; the volunteer structure the state relies on for floods, searches and disaster response. I&rsquo;m an active member here in the Palatinate.</p>
+        <p>My focus is drones. I fly, and I build the software around flying: planning the sortie, handling the imagery it produces, and turning that into something a unit can act on. Alongside that sit the Travel Radius Map for search planning and parts of an association app.</p>
+        <p>It is the work of mine that most obviously matters to someone other than me, and it keeps my software honest. If a volunteer cannot use it under pressure, it does not work, however elegant the code is.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- Web Development -->
-                <div class="skill-card reveal">
-                    <div class="skill-icon">🌐</div>
-                    <h3 class="skill-title">Web Development</h3>
-                    <p class="skill-description">Building modern, responsive websites with clean code and great user experiences. Experienced with HTML, CSS, JavaScript, and various frameworks.</p>
-                    <div class="skill-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Responsive</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="section timeline-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">My Journey</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <span class="timeline-date">2024 - Present</span>
-                    <h3 class="timeline-title">Preparing for Dual CS Degree</h3>
-                    <p class="timeline-description">Getting ready to start a dual computer science degree next year, combining academic learning with practical industry experience.</p>
-                </div>
-                <div class="timeline-item reveal">
-                    <span class="timeline-date">2023 - Present</span>
-                    <h3 class="timeline-title">Flutter App Development</h3>
-                    <p class="timeline-description">Developed and launched a cross-platform mobile application, currently in beta testing phase with active users.</p>
-                </div>
-                <div class="timeline-item reveal">
-                    <span class="timeline-date">2022 - Present</span>
-                    <h3 class="timeline-title">Python & AI Projects</h3>
-                    <p class="timeline-description">Built multiple AI-powered tools including image analysis systems and automation scripts for various applications.</p>
-                </div>
-                <div class="timeline-item reveal">
-                    <span class="timeline-date">Ongoing</span>
-                    <h3 class="timeline-title">DLRG Software Development</h3>
-                    <p class="timeline-description">Contributing to the German Life Saving Association through software development, creating tools to support their life-saving mission.</p>
-                </div>
-                <div class="timeline-item reveal">
-                    <span class="timeline-date">2024</span>
-                    <h3 class="timeline-title">Learning Rust</h3>
-                    <p class="timeline-description">Started exploring systems programming with Rust, focusing on kernel development and low-level programming concepts.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DLRG Section -->
-    <section class="section dlrg-section" style="background: var(--bg-secondary);">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">DLRG Involvement</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="intro-content">
-                <div class="intro-text reveal">
-                    <p>I'm an active member of the <strong>DLRG</strong> (Deutsche Lebens-Rettungs-Gesellschaft / German Life Saving Association), the world's largest water rescue organization.</p>
-                    <p>Beyond my volunteer work, I contribute as a developer, creating software solutions that help the organization operate more efficiently. This includes tools for member management, training coordination, and operational support.</p>
-                    <p>Being part of the DLRG combines my passion for technology with a meaningful purpose – helping save lives and promote water safety in our communities.</p>
-                </div>
-                <div class="intro-stats reveal">
-                    <div class="stat-card">
-                        <div class="stat-icon">🏊</div>
-                        <div class="stat-label">Active Member</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">💻</div>
-                        <div class="stat-label">Software Developer</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🛟</div>
-                        <div class="stat-label">Water Safety</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🤝</div>
-                        <div class="stat-label">Community</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section contact-cta">
-        <div class="container">
-            <div class="cta-content reveal">
-                <h2 class="cta-title">Interested in Working Together?</h2>
-                <p class="cta-text">Check out my projects or get in touch!</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="projects.html" class="btn btn-primary">View Projects</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Me</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-text">FH</span>
-                </div>
-                <nav class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="blog/index.html">Blog</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-                <div class="footer-social">
-                    <a href="https://github.com/FynnHer" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Fynn-Lasse Herrmann. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="scripts/scrollmagic.js"></script>
+<section class="bay">
+  <div class="wrap">
+    <div class="callout callout--loud reveal">
+      <h2>Want the code instead?</h2>
+      <p style="margin-top:1rem">All of it is public. Start with the kernels if you want to see how I think.</p>
+      <div class="btn-row">
+        <a class="btn" href="projects.html">See the work</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <p class="mono">Fynn-Lasse Herrmann</p>
+        <p style="max-width:32ch">Kernels, drones and the maps in between. Built by hand, hosted on GitHub&nbsp;Pages.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Footer">
+          <a href="index.html">Index</a>
+          <a href="projects.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="blog/index.html">Notes</a>
+          <a href="contact.html">Contact</a>
+      </nav>
+      <div class="foot__social">
+        <a href="https://github.com/FynnHer" rel="me noopener" target="_blank" aria-label="GitHub profile"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.7.8.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <p class="mono">&copy; <span data-year>2026</span> Fynn-Lasse Herrmann</p>
+      <p class="mono">The Palatinate, Germany</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

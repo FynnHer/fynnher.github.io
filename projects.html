@@ -1,300 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Fynn-Lasse Herrmann</title>
-    <meta name="description" content="Explore software projects by Fynn-Lasse Herrmann - Python, Flutter, Rust, and more">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Fynn-Lasse Herrmann</title>
+<meta name="description" content="Kernels in C and Rust, a browser photogrammetry viewer, a search-radius planner for the DLRG, and assorted tools.">
+<meta name="author" content="Fynn-Lasse Herrmann">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Work — Fynn-Lasse Herrmann">
+<meta property="og:description" content="Kernels in C and Rust, a browser photogrammetry viewer, a search-radius planner for the DLRG, and assorted tools.">
+<meta property="og:url" content="https://fynnher.github.io/projects.html">
+<link rel="canonical" href="https://fynnher.github.io/projects.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d93f14'/><text y='72' x='50' text-anchor='middle' font-family='Arial Black,sans-serif' font-size='58' fill='%23fff8f2'>F</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-text">FH</span>
-            </a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="projects.html" class="nav-link active">Projects</a></li>
-                <li class="nav-item"><a href="blog/index.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="index.html">FLH</a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="nav-links">
+        <li><a class="nav__link" href="index.html">Index</a></li>
+        <li><a class="nav__link" href="projects.html" aria-current="page">Work</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="blog/index.html">Notes</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+        <li><button class="theme" data-theme-toggle type="button">Dark</button></li>
+      </ul>
     </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__meta">
+      <span class="mono">Work</span>
+      <span class="mono">10 public repositories</span>
+    </div>
+    <h1 class="hero__title"><span>The</span><span class="is-accent">work</span></h1>
+    <p class="lede" style="margin-top:2rem">Everything here is public and unfinished in the way personal projects always are. Nothing on this page is a mock-up &mdash; each card links to the repository it describes.</p>
+  </div>
+</section>
 
-    <!-- Projects Hero -->
-    <section class="projects-hero">
-        <div class="container">
-            <h1 class="text-gradient reveal">My Projects</h1>
-            <p class="reveal">A collection of software projects I've worked on, from AI tools to mobile apps.</p>
+<section class="bay">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter projects by area">
+      <button class="filter" type="button" data-filter="all" aria-pressed="true">Everything</button>
+      <button class="filter" type="button" data-filter="systems" aria-pressed="false">Systems</button>
+      <button class="filter" type="button" data-filter="drones" aria-pressed="false">Drones</button>
+      <button class="filter" type="button" data-filter="web" aria-pressed="false">Web &amp; maps</button>
+      <button class="filter" type="button" data-filter="tools" aria-pressed="false">Tools</button>
+      <button class="filter" type="button" data-filter="dlrg" aria-pressed="false">DLRG</button>
+    </div>
+    <div class="cards">
+      <a class="card reveal" data-tags="systems" href="https://github.com/FynnHer/craybond-os" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">01 &middot; 2026</span>
+          <span class="lang lang--c">C</span>
         </div>
-    </section>
-
-    <!-- Projects Filter -->
-    <section class="section">
-        <div class="container">
-            <div class="projects-filter reveal">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="flutter">Flutter</button>
-                <button class="filter-btn" data-filter="rust">Rust</button>
-                <button class="filter-btn" data-filter="dlrg">DLRG</button>
-                <button class="filter-btn" data-filter="ai">AI</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="projects-grid">
-                <!-- Project 1: Image Analysis Tool -->
-                <article class="project-card-full reveal" data-category="python ai">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>AI / Image Analysis</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Image Analysis Tool</h3>
-                        <p class="project-description">A Python-based AI tool for automated image analysis and object detection. Uses machine learning models to identify and classify objects in images with high accuracy.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">AI</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Computer Vision</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/FynnHer" target="_blank" rel="noopener noreferrer">
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2: Flutter Mobile App -->
-                <article class="project-card-full reveal" data-category="flutter">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>Mobile App</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Flutter Mobile App (Beta)</h3>
-                        <p class="project-description">A cross-platform mobile application built with Flutter. Currently in beta testing with active users. Features modern UI design and smooth user experience across iOS and Android.</p>
-                        <div class="project-tags">
-                            <span class="tag">Flutter</span>
-                            <span class="tag">Dart</span>
-                            <span class="tag">Mobile</span>
-                            <span class="tag">Cross-Platform</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/FynnHer" target="_blank" rel="noopener noreferrer">
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3: DLRG Management System -->
-                <article class="project-card-full reveal" data-category="python dlrg">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>DLRG Tool</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">DLRG Management System</h3>
-                        <p class="project-description">Custom software solutions developed for the German Life Saving Association. Includes tools for member management, training coordination, and operational support.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">DLRG</span>
-                            <span class="tag">Database</span>
-                            <span class="tag">Automation</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/FynnHer" target="_blank" rel="noopener noreferrer">
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 4: Rust Learning Project -->
-                <article class="project-card-full reveal" data-category="rust">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>Systems Programming</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Rust Kernel Experiments</h3>
-                        <p class="project-description">Explorations in systems programming with Rust. Learning about kernel development, memory management, and low-level programming concepts.</p>
-                        <div class="project-tags">
-                            <span class="tag">Rust</span>
-                            <span class="tag">Kernel</span>
-                            <span class="tag">Systems</span>
-                            <span class="tag">Low-Level</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/FynnHer" target="_blank" rel="noopener noreferrer">
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 5: Data Processing Pipeline -->
-                <article class="project-card-full reveal" data-category="python ai">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>Data Pipeline</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Data Processing Pipeline</h3>
-                        <p class="project-description">Automated data processing pipeline for handling large datasets. Features parallel processing, data validation, and export capabilities in multiple formats.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Data</span>
-                            <span class="tag">Automation</span>
-                            <span class="tag">ETL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/FynnHer" target="_blank" rel="noopener noreferrer">
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 6: Portfolio Website -->
-                <article class="project-card-full reveal" data-category="web">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>Web Development</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Personal Portfolio Website</h3>
-                        <p class="project-description">This website! A futuristic, responsive portfolio built with modern web technologies. Features ScrollMagic animations, dark theme, and neon accents.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">ScrollMagic</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/FynnHer/fynnher.github.io" target="_blank" rel="noopener noreferrer">
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
+        <div class="card__body">
+          <h3 class="card__title">Craybond OS</h3>
+          <p class="card__text">A bare-metal AArch64 kernel that boots on QEMU’s virt machine. Assembly-level CPU bring-up and exception handling, an MMU with real page tables, the GIC interrupt controller, PCI enumeration and Device Tree parsing — then a scheduler with context switching and syscalls on top. It draws to a screen too, via a RAM framebuffer or virtio-gpu.</p>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section contact-cta">
-        <div class="container">
-            <div class="cta-content reveal">
-                <h2 class="cta-title">Have a Project Idea?</h2>
-                <p class="cta-text">Let's discuss how we can work together!</p>
-                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-            </div>
+        <div class="card__foot">
+          <span class="tag">craybond-os</span>
+          <span class="tag">View on GitHub &rarr;</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-text">FH</span>
-                </div>
-                <nav class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="blog/index.html">Blog</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-                <div class="footer-social">
-                    <a href="https://github.com/FynnHer" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Fynn-Lasse Herrmann. All rights reserved.</p>
-            </div>
+      </a>
+      <a class="card reveal" data-tags="systems" href="https://github.com/FynnHer/capeos" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">02 &middot; 2025</span>
+          <span class="lang lang--rust">Rust</span>
         </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="scripts/scrollmagic.js"></script>
-    <script>
-        // Project filter functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card-full');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Update active button
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const filter = this.dataset.filter;
-                    
-                    projectCards.forEach(card => {
-                        const categories = card.dataset.category || '';
-                        
-                        if (filter === 'all' || categories.includes(filter)) {
-                            card.style.display = 'block';
-                            card.style.animation = 'fadeIn 0.5s ease forwards';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
-    <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+        <div class="card__body">
+          <h3 class="card__title">CapeOS</h3>
+          <p class="card__text">The same itch, scratched again in Rust. Where Craybond taught me how the hardware actually behaves, CapeOS is about whether the type system can carry that knowledge for me instead of my memory doing it.</p>
+        </div>
+        <div class="card__foot">
+          <span class="tag">capeos</span>
+          <span class="tag">View on GitHub &rarr;</span>
+        </div>
+      </a>
+      <a class="card reveal" data-tags="systems tools" href="https://github.com/FynnHer/escaperoom-servertui" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">03 &middot; 2025</span>
+          <span class="lang lang--rust">Rust</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Escape Room Server TUI</h3>
+          <p class="card__text">A terminal UI that wraps a bare <code>server.py</code> running a real escape room. It surfaces puzzle state and IPs, server uptime, and a readable log stream, so the person at the desk can see what the room is doing without reading raw stdout.</p>
+        </div>
+        <div class="card__foot">
+          <span class="tag">escaperoom-servertui</span>
+          <span class="tag">View on GitHub &rarr;</span>
+        </div>
+      </a>
+      <a class="card reveal" data-tags="web drones dlrg" href="https://github.com/FynnHer/mapping_viewer" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">04 &middot; 2025</span>
+          <span class="lang lang--js">JavaScript</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Mapping &amp; 3D Viewer</h3>
+          <p class="card__text">The other half of the drone work: a browser viewer for what comes back from a flight. Leaflet handles orthophotos, elevation models and GeoJSON with per-layer opacity; Three.js handles the reconstructed mesh, with distance, area and height measurement, clipping planes, and switchable perspective or orthographic cameras. Built so an operations lead can measure something on a laptop without installing GIS software.</p>
+        </div>
+        <div class="card__foot">
+          <span class="tag">mapping_viewer</span>
+          <span class="tag">View on GitHub &rarr;</span>
+        </div>
+      </a>
+      <a class="card reveal" data-tags="web dlrg drones" href="https://github.com/FynnHer/dlrg_landau_services" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">05 &middot; 2026</span>
+          <span class="lang lang--web">HTML / JS</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Travel Radius Map</h3>
+          <p class="card__text">A search-planning map for DLRG operations. Drop a point, pick a movement mode, speed and a time budget, and it draws how far a missing person could plausibly have got. Real isochrones come from the OpenRouteService API, with a plain radius as fallback when the API has nothing useful to say. Circles persist between visits, POIs list out, and search areas export to KML for the crews and the drone flight plan.</p>
+        </div>
+        <div class="card__foot">
+          <span class="tag">View on GitHub &rarr;</span>
+        </div>
+      </a>
+      <a class="card reveal" data-tags="web drones dlrg" href="https://github.com/FynnHer/drone" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">06 &middot; 2026</span>
+          <span class="lang lang--js">JavaScript</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Drone</h3>
+          <p class="card__text">The capture end: flight planning and imagery handling for the drone work, feeding the photogrammetry pipeline that the mapping viewer reads. This is the area I spend most of my volunteer time in, and the repository is public mostly so I stay honest about finishing it.</p>
+        </div>
+        <div class="card__foot">
+          <span class="tag">drone</span>
+          <span class="tag">View on GitHub &rarr;</span>
+        </div>
+      </a>
+      <a class="card reveal" data-tags="dlrg" href="https://github.com/FynnHer/dlrg_vereinsapp_ausschnitte" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">07 &middot; 2025</span>
+          <span class="lang lang--dart">Dart</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">DLRG Club App</h3>
+          <p class="card__text">Excerpts from a Flutter app built for association use — the parts I can show publicly. Member-facing screens, training coordination, the everyday admin that otherwise lives in a group chat.</p>
+        </div>
+        <div class="card__foot">
+          <span class="tag">dlrg_vereinsapp_ausschnitte</span>
+          <span class="tag">View on GitHub &rarr;</span>
+        </div>
+      </a>
+      <a class="card reveal" data-tags="tools" href="https://github.com/FynnHer/battleship-client" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">08 &middot; 2025</span>
+          <span class="lang lang--python">Python</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Battleship Client</h3>
+          <p class="card__text">A Tkinter client for a given Python battleship server, written for school. Drag-and-drop ship placement with rotation, hits and misses highlighted as they land. It also ships a deliberately unhinged “special mode” with pygame sound and OpenCV video — which I asked to be graded on the normal mode instead.</p>
+        </div>
+        <div class="card__foot">
+          <span class="tag">battleship-client</span>
+          <span class="tag">View on GitHub &rarr;</span>
+        </div>
+      </a>
+      <a class="card reveal" data-tags="systems" href="https://github.com/FynnHer/projects_in_c" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">09 &middot; 2026</span>
+          <span class="lang lang--c">C</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Projects in C</h3>
+          <p class="card__text">A workbench rather than a product: small C programs written to understand pointers, memory layout and the standard library properly, before trusting myself with any of it in a kernel.</p>
+        </div>
+        <div class="card__foot">
+          <span class="tag">projects_in_c</span>
+          <span class="tag">View on GitHub &rarr;</span>
+        </div>
+      </a>
+      <a class="card reveal" data-tags="tools" href="https://github.com/FynnHer/OOP-Vortrag" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">10 &middot; 2026</span>
+          <span class="lang lang--python">Python</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">OOP Talk</h3>
+          <p class="card__text">Teaching material for a class talk on object-oriented programming, written with Linus. An airport domain — gates, runways, passenger and cargo aircraft — modelled as a PlantUML class diagram, plus exercises that build up to writing a scheduler.</p>
+        </div>
+        <div class="card__foot">
+          <span class="tag">OOP-Vortrag</span>
+          <span class="tag">View on GitHub &rarr;</span>
+        </div>
+      </a>
+    </div>
+    <div class="callout reveal mt-lg">
+      <h3>Plus the archive</h3>
+      <p style="margin-top:.75rem">Older school exercises, calculators and half-finished experiments are still up. They are not good, but deleting them would be pretending I started here.</p>
+      <div class="btn-row">
+        <a class="btn" href="https://github.com/FynnHer?tab=repositories" target="_blank" rel="noopener">Browse all repositories</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <p class="mono">Fynn-Lasse Herrmann</p>
+        <p style="max-width:32ch">Kernels, drones and the maps in between. Built by hand, hosted on GitHub&nbsp;Pages.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Footer">
+          <a href="index.html">Index</a>
+          <a href="projects.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="blog/index.html">Notes</a>
+          <a href="contact.html">Contact</a>
+      </nav>
+      <div class="foot__social">
+        <a href="https://github.com/FynnHer" rel="me noopener" target="_blank" aria-label="GitHub profile"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.7.8.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <p class="mono">&copy; <span data-year>2026</span> Fynn-Lasse Herrmann</p>
+      <p class="mono">The Palatinate, Germany</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

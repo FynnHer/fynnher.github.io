@@ -1,234 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fynn-Lasse Herrmann | Developer & Student</title>
-    <meta name="description" content="Personal portfolio and blog of Fynn-Lasse Herrmann - Software Developer, AI Enthusiast, and DLRG Member">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fynn-Lasse Herrmann</title>
+<meta name="description" content="Fynn-Lasse Herrmann — 19, the Palatinate, Germany. Computer science student at DHBW Karlsruhe with SAP, bare-metal kernel hobbyist, and drone operator and developer for the DLRG in civil protection.">
+<meta name="author" content="Fynn-Lasse Herrmann">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fynn-Lasse Herrmann">
+<meta property="og:description" content="Fynn-Lasse Herrmann — 19, the Palatinate, Germany. Computer science student at DHBW Karlsruhe with SAP, bare-metal kernel hobbyist, and drone operator and developer for the DLRG in civil protection.">
+<meta property="og:url" content="https://fynnher.github.io/">
+<link rel="canonical" href="https://fynnher.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d93f14'/><text y='72' x='50' text-anchor='middle' font-family='Arial Black,sans-serif' font-size='58' fill='%23fff8f2'>F</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-text">FH</span>
-            </a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="blog/index.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="index.html">FLH</a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="nav-links">
+        <li><a class="nav__link" href="index.html" aria-current="page">Index</a></li>
+        <li><a class="nav__link" href="projects.html">Work</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="blog/index.html">Notes</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+        <li><button class="theme" data-theme-toggle type="button">Dark</button></li>
+      </ul>
     </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__meta">
+      <span class="mono">Fynn-Lasse Herrmann &mdash; 19</span>
+      <span class="mono">The Palatinate, Germany</span>
+    </div>
+    <h1 class="hero__title">
+      <span>I build</span>
+      <span class="is-accent">operating</span>
+      <span>systems</span>
+      <span>for fun.</span>
+    </h1>
+    <div class="hero__grid">
+      <div>
+        <p class="lede">Two of them, so far. One in C to learn how the hardware really behaves, one in Rust to find out whether the compiler can hold that knowledge for me.</p>
+        <p class="lede" style="margin-top:1rem;color:var(--ink-soft)">The rest of my time goes to drones. I fly and build software for the DLRG, the German water rescue association, which is part of the country&rsquo;s civil protection system &mdash; so the maps and tools here are made for real operations.</p>
+        <div class="btn-row">
+          <a class="btn btn--loud" href="projects.html">See the work</a>
+          <a class="btn" href="https://github.com/FynnHer" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <aside class="hero__side">
+        <dl>
+          <dt>Studying</dt><dd>B.Sc. Computer Science, dual, at DHBW&nbsp;Karlsruhe</dd>
+          <dt>Partner</dt><dd>SAP&nbsp;SE, Walldorf</dd>
+          <dt>Writing</dt><dd>C, Rust, Python, Dart, JavaScript</dd>
+          <dt>Flying</dt><dd>Drones for the DLRG, in civil protection</dd>
+          <dt>Poking at</dt><dd>Schedulers, virtio, isochrones</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-bg">
-            <div class="grid-overlay"></div>
-            <div class="particles" id="particles"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <p class="hero-subtitle">Welcome to my digital space</p>
-                <h1 class="hero-title glitch" data-text="Fynn-Lasse Herrmann">Fynn-Lasse Herrmann</h1>
-                <p class="hero-description">
-                    <span class="typed-text">18-year-old developer from Germany</span>
-                </p>
-                <p class="hero-tagline">Python • Flutter • Rust • AI</p>
-                <div class="hero-cta">
-                    <a href="projects.html" class="btn btn-primary">View Projects</a>
-                    <a href="about.html" class="btn btn-secondary">About Me</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-placeholder">
-                    <div class="placeholder-avatar">
-                        <div class="avatar-ring"></div>
-                        <div class="avatar-inner">FH</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll Down</span>
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track"><span>Bare-metal AArch64</span><span>✦</span><span>Rust</span><span>✦</span><span>Page tables</span><span>✦</span><span>Drones</span><span>✦</span><span>Photogrammetry</span><span>✦</span><span>DLRG</span><span>✦</span><span>Civil protection</span><span>✦</span><span>Leaflet &amp; Three.js</span><span>✦</span><span>Isochrones</span><span>✦</span><span>C</span><span>✦</span><span>Interrupt handlers</span><span>✦</span></div>
+</div>
 
-    <!-- Intro Section -->
-    <section class="section intro-section" id="intro">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Who Am I?</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="intro-content">
-                <div class="intro-text reveal">
-                    <p>I'm a passionate developer and student from Rhineland-Palatinate, Germany. Currently preparing for a dual computer science degree, I spend my time exploring the fascinating worlds of AI, mobile development, and systems programming.</p>
-                    <p>When I'm not coding, you'll find me active in the <strong>DLRG</strong> (German Life Saving Association), where I contribute both as a member and developer.</p>
-                </div>
-                <div class="intro-stats reveal">
-                    <div class="stat-card">
-                        <div class="stat-icon">🐍</div>
-                        <div class="stat-label">Python & AI</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">📱</div>
-                        <div class="stat-label">Flutter Apps</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🦀</div>
-                        <div class="stat-label">Learning Rust</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🏊</div>
-                        <div class="stat-label">DLRG Member</div>
-                    </div>
-                </div>
-            </div>
+<section class="bay">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2>Selected work</h2>
+      <span class="mono">Three of ten &mdash; the rest live on the work page</span>
+    </div>
+    <div class="cards">
+      <a class="card reveal" data-tags="systems" href="https://github.com/FynnHer/craybond-os" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">01 &middot; 2026</span>
+          <span class="lang lang--c">C</span>
         </div>
-    </section>
-
-    <!-- Featured Projects Section -->
-    <section class="section projects-preview" id="projects-preview">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="projects-grid">
-                <article class="project-card reveal" data-category="ai">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>AI Project</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Image Analysis Tool</h3>
-                        <p class="project-description">Python-based AI tool for automated image analysis and object detection.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">AI</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card reveal" data-category="mobile">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>Mobile App</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Flutter App (Beta)</h3>
-                        <p class="project-description">Cross-platform mobile application currently in beta testing phase.</p>
-                        <div class="project-tags">
-                            <span class="tag">Flutter</span>
-                            <span class="tag">Dart</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card reveal" data-category="dlrg">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>DLRG Tool</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">DLRG Management System</h3>
-                        <p class="project-description">Software solutions for the German Life Saving Association.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">DLRG</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="section-cta reveal">
-                <a href="projects.html" class="btn btn-primary">View All Projects</a>
-            </div>
+        <div class="card__body">
+          <h3 class="card__title">Craybond OS</h3>
+          <p class="card__text">A bare-metal AArch64 kernel that boots on QEMU’s virt machine. Assembly-level CPU bring-up and exception handling, an MMU with real page tables, the GIC interrupt controller, PCI enumeration and Device Tree parsing — then a scheduler with context switching and syscalls on top. It draws to a screen too, via a RAM framebuffer or virtio-gpu.</p>
         </div>
-    </section>
-
-    <!-- Latest Blog Posts Section -->
-    <section class="section blog-preview" id="blog-preview">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Latest Posts</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="blog-grid">
-                <article class="blog-card reveal">
-                    <div class="blog-image">
-                        <div class="blog-placeholder">
-                            <span>Blog Post</span>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">November 2024</span>
-                        <h3 class="blog-title">Welcome to My Blog</h3>
-                        <p class="blog-excerpt">First post on my new personal blog. Excited to share my coding journey and experiences!</p>
-                        <a href="blog/posts/welcome.html" class="blog-link">Read More →</a>
-                    </div>
-                </article>
-            </div>
-            <div class="section-cta reveal">
-                <a href="blog/index.html" class="btn btn-secondary">All Posts</a>
-            </div>
+        <div class="card__foot">
+          <span class="tag">craybond-os</span>
+          <span class="tag">View on GitHub &rarr;</span>
         </div>
-    </section>
-
-    <!-- Contact CTA Section -->
-    <section class="section contact-cta" id="contact-cta">
-        <div class="container">
-            <div class="cta-content reveal">
-                <h2 class="cta-title">Let's Connect</h2>
-                <p class="cta-text">Interested in collaborating or just want to say hi?</p>
-                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-            </div>
+      </a>
+      <a class="card reveal" data-tags="web drones dlrg" href="https://github.com/FynnHer/mapping_viewer" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">04 &middot; 2025</span>
+          <span class="lang lang--js">JavaScript</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-text">FH</span>
-                </div>
-                <nav class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="blog/index.html">Blog</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-                <div class="footer-social">
-                    <a href="https://github.com/FynnHer" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Fynn-Lasse Herrmann. All rights reserved.</p>
-            </div>
+        <div class="card__body">
+          <h3 class="card__title">Mapping &amp; 3D Viewer</h3>
+          <p class="card__text">The other half of the drone work: a browser viewer for what comes back from a flight. Leaflet handles orthophotos, elevation models and GeoJSON with per-layer opacity; Three.js handles the reconstructed mesh, with distance, area and height measurement, clipping planes, and switchable perspective or orthographic cameras. Built so an operations lead can measure something on a laptop without installing GIS software.</p>
         </div>
-    </footer>
+        <div class="card__foot">
+          <span class="tag">mapping_viewer</span>
+          <span class="tag">View on GitHub &rarr;</span>
+        </div>
+      </a>
+      <a class="card reveal" data-tags="web dlrg drones" href="https://github.com/FynnHer/dlrg_landau_services" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="card__num">05 &middot; 2026</span>
+          <span class="lang lang--web">HTML / JS</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Travel Radius Map</h3>
+          <p class="card__text">A search-planning map for DLRG operations. Drop a point, pick a movement mode, speed and a time budget, and it draws how far a missing person could plausibly have got. Real isochrones come from the OpenRouteService API, with a plain radius as fallback when the API has nothing useful to say. Circles persist between visits, POIs list out, and search areas export to KML for the crews and the drone flight plan.</p>
+        </div>
+        <div class="card__foot">
+          <span class="tag">View on GitHub &rarr;</span>
+        </div>
+      </a>
+    </div>
+    <div class="btn-row">
+      <a class="btn" href="projects.html">All projects</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="scripts/scrollmagic.js"></script>
+<section class="bay bay--tint">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2>What I actually do</h2>
+      <span class="mono">Short version</span>
+    </div>
+    <div class="slab reveal">
+      <p class="slab__label">01 &mdash; Low level</p>
+      <div class="slab__body">
+        <h3>Getting to the bottom of the stack</h3>
+        <p>I like the layer where nothing is done for you: no allocator until you write one, no scheduler until you write one, no output until you talk to a UART. Kernel work is slow and unglamorous and it is the only kind of programming that has ever properly held my attention.</p>
+      </div>
+    </div>
+    <div class="slab reveal">
+      <p class="slab__label">02 &mdash; Drones</p>
+      <div class="slab__body">
+        <h3>Flying, and everything after the flight</h3>
+        <p>This is where most of my volunteer time goes. Drones are useful to civil protection precisely when the ground picture is unclear, which means the imagery has to become an answer quickly. So I work both ends: flight planning and imagery handling on the way out, and a browser viewer for orthophotos, elevation models and reconstructed 3D meshes on the way back &mdash; with measuring and clipping tools, so somebody who is not me can get a number out of the data on a laptop in the field.</p>
+      </div>
+    </div>
+    <div class="slab reveal">
+      <p class="slab__label">03 &mdash; Civil protection</p>
+      <div class="slab__body">
+        <h3>Software that gets used under pressure</h3>
+        <p>The DLRG is a water rescue association and part of German civil protection, which means the software I write for it can end up in front of a volunteer during an actual deployment. That is a good discipline. A search-radius planner has to answer in seconds and be honest about how rough the answer is; nobody in a rescue is going to read a tooltip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bay">
+  <div class="wrap">
+    <div class="callout callout--loud reveal">
+      <h2>Say hello</h2>
+      <p style="margin-top:1rem">I read everything that arrives. Issues and pull requests on any of my repositories are the surest way to reach me.</p>
+      <div class="btn-row">
+        <a class="btn" href="https://github.com/FynnHer" target="_blank" rel="noopener">github.com/FynnHer</a>
+        <a class="btn" href="contact.html">Other ways</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <p class="mono">Fynn-Lasse Herrmann</p>
+        <p style="max-width:32ch">Kernels, drones and the maps in between. Built by hand, hosted on GitHub&nbsp;Pages.</p>
+      </div>
+      <nav class="foot__nav" aria-label="Footer">
+          <a href="index.html">Index</a>
+          <a href="projects.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="blog/index.html">Notes</a>
+          <a href="contact.html">Contact</a>
+      </nav>
+      <div class="foot__social">
+        <a href="https://github.com/FynnHer" rel="me noopener" target="_blank" aria-label="GitHub profile"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.7.8.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <p class="mono">&copy; <span data-year>2026</span> Fynn-Lasse Herrmann</p>
+      <p class="mono">The Palatinate, Germany</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
