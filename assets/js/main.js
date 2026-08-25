@@ -1,194 +1,96 @@
-/* ============================================
-   Main JavaScript - Navigation & Utilities
-   ============================================ */
+/* fynnher.github.io — small, dependency-free */
+(function () {
+    'use strict';
 
-// Add js-enabled class immediately to enable reveal animations
-document.documentElement.classList.add('js-enabled');
+    document.documentElement.classList.add('js');
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
-    initNavigation();
-    initRevealAnimations();
-    initParticles();
-});
+    /* ---- Theme: remembers choice, otherwise follows the OS ---- */
+    var root = document.documentElement;
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (e) {}
+    if (stored === 'light' || stored === 'dark') root.setAttribute('data-theme', stored);
 
-/* ============================================
-   Navigation
-   ============================================ */
-
-function initNavigation() {
-    const navbar = document.querySelector('.navbar');
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    // Sticky navbar on scroll
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-    
-    // Mobile menu toggle
-    if (navToggle) {
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
+    function currentTheme() {
+        var set = root.getAttribute('data-theme');
+        if (set) return set;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
-    
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-        });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-        }
-    });
-}
 
-/* ============================================
-   Reveal Animations (Fallback without ScrollMagic)
-   ============================================ */
-
-function initRevealAnimations() {
-    const reveals = document.querySelectorAll('.reveal');
-    
-    function checkReveal() {
-        const windowHeight = window.innerHeight;
-        const revealPoint = 150;
-        
-        reveals.forEach(reveal => {
-            const revealTop = reveal.getBoundingClientRect().top;
-            
-            if (revealTop < windowHeight - revealPoint) {
-                reveal.classList.add('active');
-            }
-        });
+    function paintToggle(btn) {
+        var next = currentTheme() === 'dark' ? 'light' : 'dark';
+        btn.textContent = currentTheme() === 'dark' ? 'Light' : 'Dark';
+        btn.setAttribute('aria-label', 'Switch to ' + next + ' theme');
     }
-    
-    // Initial check
-    checkReveal();
-    
-    // Check on scroll
-    window.addEventListener('scroll', checkReveal);
-}
 
-/* ============================================
-   Particle Background
-   ============================================ */
-
-function initParticles() {
-    const particlesContainer = document.getElementById('particles');
-    if (!particlesContainer) return;
-    
-    const particleCount = 50;
-    
-    for (let i = 0; i < particleCount; i++) {
-        createParticle(particlesContainer);
-    }
-}
-
-function createParticle(container) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    
-    // Random properties
-    const size = Math.random() * 4 + 1;
-    const x = Math.random() * 100;
-    const y = Math.random() * 100;
-    const duration = Math.random() * 20 + 10;
-    const delay = Math.random() * 10;
-    const opacity = Math.random() * 0.5 + 0.1;
-    
-    particle.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        left: ${x}%;
-        top: ${y}%;
-        background: ${Math.random() > 0.5 ? 'var(--accent-cyan)' : 'var(--accent-purple)'};
-        border-radius: 50%;
-        opacity: ${opacity};
-        animation: particleFloat ${duration}s ease-in-out ${delay}s infinite;
-        pointer-events: none;
-    `;
-    
-    container.appendChild(particle);
-}
-
-// Add particle animation CSS
-const particleStyle = document.createElement('style');
-particleStyle.textContent = `
-    @keyframes particleFloat {
-        0%, 100% {
-            transform: translate(0, 0) scale(1);
-            opacity: 0.3;
-        }
-        25% {
-            transform: translate(20px, -30px) scale(1.2);
-            opacity: 0.5;
-        }
-        50% {
-            transform: translate(-10px, -50px) scale(0.8);
-            opacity: 0.2;
-        }
-        75% {
-            transform: translate(15px, -20px) scale(1.1);
-            opacity: 0.4;
-        }
-    }
-`;
-document.head.appendChild(particleStyle);
-
-/* ============================================
-   Smooth Scroll
-   ============================================ */
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+    document.addEventListener('DOMContentLoaded', function () {
+        /* Theme toggle */
+        var toggle = document.querySelector('[data-theme-toggle]');
+        if (toggle) {
+            paintToggle(toggle);
+            toggle.addEventListener('click', function () {
+                var next = currentTheme() === 'dark' ? 'light' : 'dark';
+                root.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                paintToggle(toggle);
             });
         }
-    });
-});
 
-/* ============================================
-   Typed Effect (Simple)
-   ============================================ */
-
-function initTypedEffect() {
-    const typedElement = document.querySelector('.typed-text');
-    if (!typedElement) return;
-    
-    const text = typedElement.textContent;
-    typedElement.textContent = '';
-    
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            typedElement.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, 50);
+        /* Mobile nav */
+        var navBtn = document.querySelector('.nav__toggle');
+        var navList = document.querySelector('.nav__links');
+        if (navBtn && navList) {
+            navBtn.addEventListener('click', function () {
+                var open = navList.classList.toggle('is-open');
+                navBtn.setAttribute('aria-expanded', String(open));
+            });
+            navList.addEventListener('click', function (e) {
+                if (e.target.closest('a')) {
+                    navList.classList.remove('is-open');
+                    navBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
         }
-    }
-    
-    // Start typing after a delay
-    setTimeout(type, 1000);
-}
 
-// Initialize typed effect
-initTypedEffect();
+        /* Reveal on scroll */
+        var targets = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) {
+            Array.prototype.forEach.call(targets, function (el) { el.classList.add('is-in'); });
+        } else {
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('is-in');
+                    io.unobserve(entry.target);
+                });
+            }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+            Array.prototype.forEach.call(targets, function (el) { io.observe(el); });
+        }
+
+        /* Project filters */
+        var filters = document.querySelectorAll('[data-filter]');
+        var items = document.querySelectorAll('[data-tags]');
+        if (filters.length && items.length) {
+            Array.prototype.forEach.call(filters, function (btn) {
+                btn.addEventListener('click', function () {
+                    var want = btn.getAttribute('data-filter');
+                    Array.prototype.forEach.call(filters, function (b) {
+                        b.setAttribute('aria-pressed', String(b === btn));
+                    });
+                    Array.prototype.forEach.call(items, function (item) {
+                        var tags = item.getAttribute('data-tags') || '';
+                        var show = want === 'all' || tags.split(' ').indexOf(want) !== -1;
+                        item.classList.toggle('is-hidden', !show);
+                    });
+                });
+            });
+        }
+
+        /* Duplicate ticker content so the marquee loops seamlessly */
+        var track = document.querySelector('.ticker__track');
+        if (track) track.innerHTML += track.innerHTML;
+
+        /* Footer year */
+        var year = document.querySelector('[data-year]');
+        if (year) year.textContent = String(new Date().getFullYear());
+    });
+})();
